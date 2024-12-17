@@ -4,7 +4,7 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "CustomUser")
-class CustomUser(
+ data class CustomUser(
     val username: String = "",
     val password: String = "",
     val isEnabled: Boolean = true,
