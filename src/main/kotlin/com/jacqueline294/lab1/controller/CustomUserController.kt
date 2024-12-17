@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*
 class CustomUserController(
     private val customUserRepository: CustomUserRepository
 ) {
-    @GetMapping
+    @GetMapping("/all")
     fun getAllUsers(): List<CustomUser> = customUserRepository.findAll()
 
 
