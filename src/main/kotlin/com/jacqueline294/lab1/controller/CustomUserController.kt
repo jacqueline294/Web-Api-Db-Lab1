@@ -2,6 +2,7 @@ package com.jacqueline294.lab1.controller
 
 import com.jacqueline294.lab1.model.CustomUser
 import com.jacqueline294.lab1.repository.CustomUserRepository
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("/user")
 class CustomUserController(
-    private val customUserRepository: CustomUserRepository
+    @Autowired val customUserRepository: CustomUserRepository
 ) {
     @GetMapping("/all")
     fun getAllUsers(): List<CustomUser> = customUserRepository.findAll()
